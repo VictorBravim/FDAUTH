@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AUTH",
-  description: "Authenticação",
+  title: "Full Dev - AUTH",
+  description: "Autenticação FullDev!",
 };
 
 export default function RootLayout({

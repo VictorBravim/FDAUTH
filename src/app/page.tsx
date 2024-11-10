@@ -11,16 +11,13 @@ export default function VerifyPhone() {
   const [isVerified, setIsVerified] = useState<null | boolean>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // Link do grupo no WhatsApp
   const whatsappGroupLink = 'https://chat.whatsapp.com/KNK4NlZkxaL2w5YF8v2qka';
 
-  // Função de validação para números brasileiros
   const validatePhoneNumber = (number: string) => {
     const brazilianPhonePattern = /^(\d{2})\d{9}$/;
     return brazilianPhonePattern.test(number);
   };
 
-  // Função de envio do formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -29,7 +26,6 @@ export default function VerifyPhone() {
       return;
     }
 
-    // Ativa o reCAPTCHA invisível
     const token = await recaptchaRef.current?.executeAsync();
     if (token) {
       setIsVerified(true);
@@ -125,7 +121,6 @@ export default function VerifyPhone() {
         <p className="text-center text-md text-gray-500 mt-6">By Devs, For Devs</p>
       </div>
 
-      {/* reCAPTCHA invisível */}
       <ReCAPTCHA
         sitekey="6LckrHoqAAAAAHjHmfjO8id7lwkVhcPwj6ejFVlW"
         size="invisible"
