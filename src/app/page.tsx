@@ -1,8 +1,8 @@
 'use client';
 import { useState, useRef } from 'react';
 import Head from 'next/head';
-import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
-import { AiFillTikTok } from 'react-icons/ai';
+import { FaInstagramSquare, FaLinkedin, FaGithubSquare } from 'react-icons/fa';
+import { AiFillTikTok, AiFillDiscord } from 'react-icons/ai';
 import { IoLogoYoutube } from 'react-icons/io5';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -101,6 +101,20 @@ export default function VerifyPhone() {
             rel="noopener noreferrer"
           >
             <FaLinkedin size={32} color="#0077B5" />
+          </a>
+          <a
+            href="https://discord.com/invite/PpCxFtuX"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillDiscord size={32} color="#151BB6" />
+          </a>
+          <a
+            href="https://github.com/ComunidadeFullDev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithubSquare size={32} color="#00000" />
           </a>
           <a
             href="https://www.tiktok.com/@comunidadefulldev?_t=8r5kwpTwm4j&_r=1"
