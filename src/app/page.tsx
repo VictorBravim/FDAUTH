@@ -12,7 +12,7 @@ export default function VerifyPhone() {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   // Link do grupo no WhatsApp
-  const whatsappGroupLink = 'https://chat.whatsapp.com/SEU_LINK_DO_GRUPO';
+  const whatsappGroupLink = 'https://chat.whatsapp.com/KNK4NlZkxaL2w5YF8v2qka';
 
   // Função de validação para números brasileiros
   const validatePhoneNumber = (number: string) => {
@@ -127,7 +127,7 @@ export default function VerifyPhone() {
 
       {/* reCAPTCHA invisível */}
       <ReCAPTCHA
-        sitekey="6LckrHoqAAAAAHjHmfjO8id7lwkVhcPwj6ejFVlW" // Substitua pela sua chave do site
+        sitekey="6LckrHoqAAAAAHjHmfjO8id7lwkVhcPwj6ejFVlW"
         size="invisible"
         ref={recaptchaRef}
       />
