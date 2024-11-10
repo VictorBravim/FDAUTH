@@ -114,7 +114,7 @@ export default function VerifyPhone() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithubSquare size={32} color="#00000" />
+            <FaGithubSquare size={32} color="#000000" />
           </a>
           <a
             href="https://www.tiktok.com/@comunidadefulldev?_t=8r5kwpTwm4j&_r=1"
