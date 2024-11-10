@@ -1,15 +1,18 @@
-'use client'
-import { useState, useRef } from "react";
-import Head from "next/head";
-import { FaWhatsapp, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Importando ícones de redes sociais
+'use client';
+import { useState, useRef } from 'react';
+import Head from 'next/head';
+import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
+import { AiFillTikTok } from 'react-icons/ai';
+import { IoLogoYoutube } from 'react-icons/io5';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function VerifyPhone() {
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [isVerified, setIsVerified] = useState<null | boolean>(null);
-  const recaptchaRef = useRef<any>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   // Link do grupo no WhatsApp
-  const whatsappGroupLink = "https://chat.whatsapp.com/SEU_LINK_DO_GRUPO";
+  const whatsappGroupLink = 'https://chat.whatsapp.com/SEU_LINK_DO_GRUPO';
 
   // Função de validação para números brasileiros
   const validatePhoneNumber = (number: string) => {
@@ -27,7 +30,7 @@ export default function VerifyPhone() {
     }
 
     // Ativa o reCAPTCHA invisível
-    const token = await recaptchaRef.current.executeAsync();
+    const token = await recaptchaRef.current?.executeAsync();
     if (token) {
       setIsVerified(true);
       setTimeout(() => {
@@ -39,22 +42,24 @@ export default function VerifyPhone() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{ backgroundImage: "url('/46.png')" }}>
+    <div
+      className="flex justify-center items-center h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/Banner.webp')" }}
+    >
       <Head>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LckrHoqAAAAAHjHmfjO8id7lwkVhcPwj6ejFVlW" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </Head>
 
       <div className="p-8 w-full max-w-lg bg-white text-[#B22D00] rounded-lg shadow-2xl border-2 border-[#B22D00]">
         <h2 className="text-center text-3xl font-bold mb-4">Verifique seu número</h2>
-        <p className="text-center text-lg text-gray-600 mb-6">
+        <p className="text-center text-lg text-gray-500 mb-6">
           Verifique seu número para entrar na comunidade FullDev!
         </p>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-lg font-medium mb-2">Número de telefone</label>
-            <p className="text-sm text-gray-500 mb-4">Digite seu número de celular no formato: +55 (XX) 9XXXX-XXXX</p>
-            <div className="flex mb-6">
+            <div className="flex mb-2">
               <span className="inline-flex items-center px-4 text-lg bg-[#B22D00] text-white border border-r-0 rounded-l-md">
                 +55
               </span>
@@ -66,6 +71,9 @@ export default function VerifyPhone() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
+            <p className="text-sm text-gray-500 mb-4">
+              Digite seu número de celular no formato: +55 (XX) 9XXXX-XXXX
+            </p>
           </div>
 
           {isVerified === false && (
@@ -83,19 +91,34 @@ export default function VerifyPhone() {
           </button>
         </form>
 
-        <div className="flex justify-center mt-6 space-x-6">
-          {/* Ícones de redes sociais */}
-          <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
-            <FaWhatsapp size={30} className="text-[#25D366]" />
+        <div className="flex space-x-4 justify-center mt-4">
+          <a
+            href="https://www.instagram.com/comunidadefulldev/?igsh=MnVjOW03NW4wOHFp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagramSquare size={32} color="#E1306C" />
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook size={30} className="text-[#1877F2]" />
+          <a
+            href="https://www.linkedin.com/groups/9899811/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={32} color="#0077B5" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={30} className="text-[#1DA1F2]" />
+          <a
+            href="https://www.tiktok.com/@comunidadefulldev?_t=8r5kwpTwm4j&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillTikTok size={32} color="#000000" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram size={30} className="text-[#C13584]" />
+          <a
+            href="https://www.youtube.com/@comunidadefulldev?si=_vgknvDpcDwAMGTk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IoLogoYoutube size={32} color="#FF0000" />
           </a>
         </div>
 
@@ -103,13 +126,11 @@ export default function VerifyPhone() {
       </div>
 
       {/* reCAPTCHA invisível */}
-      <div
-        className="g-recaptcha"
-        data-sitekey="6LckrHoqAAAAAHjHmfjO8id7lwkVhcPwj6ejFVlW"
-        data-callback="onReCAPTCHAChange"
+      <ReCAPTCHA
+        sitekey="6LckrHoqAAAAAHjHmfjO8id7lwkVhcPwj6ejFVlW" // Substitua pela sua chave do site
+        size="invisible"
         ref={recaptchaRef}
-        data-size="invisible"
-      ></div>
+      />
     </div>
   );
 }
