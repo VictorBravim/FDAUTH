@@ -11,7 +11,7 @@ export default function VerifyPhone() {
   const [isVerified, setIsVerified] = useState<null | boolean>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const whatsappGroupLink = 'https://chat.whatsapp.com/KNK4NlZkxaL2w5YF8v2qka';
+  const whatsappGroupLink = 'https://chat.whatsapp.com/ChrXjnNn3Xh1gTikrYyjAs';
 
   const validatePhoneNumber = (number: string) => {
     const brazilianPhonePattern = /^(\d{2})\d{9}$/;
