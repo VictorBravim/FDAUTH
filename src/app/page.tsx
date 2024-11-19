@@ -108,7 +108,7 @@ export default function VerifyPhone() {
             rel="noopener noreferrer"
           >
             <img
-              src="/linkedin.png"
+              src="/Linkedin.png"
               alt="LinkedIn"
               className="w-8 h-8"
             />
@@ -152,7 +152,7 @@ export default function VerifyPhone() {
             rel="noopener noreferrer"
           >
             <img
-              src="/Youtube.png"
+              src="/YouTube.png"
               alt="YouTube"
               className="w-8 h-8"
             />
