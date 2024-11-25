@@ -12,8 +12,8 @@ export default function VerifyPhone() {
   const whatsappGroupLink = 'https://chat.whatsapp.com/ChrXjnNn3Xh1gTikrYyjAs';
 
   const validatePhoneNumber = (code: string, number: string) => {
-    const phonePattern = /^\d{1,4}$/; // Código do país deve ter de 1 a 4 dígitos
-    const numberPattern = /^\d{7,12}$/; // Número deve ter entre 7 e 12 dígitos
+    const phonePattern = /^\d{1,4}$/;
+    const numberPattern = /^\d{7,12}$/; 
     return phonePattern.test(code) && numberPattern.test(number);
   };
 
