@@ -9,11 +9,11 @@ export default function VerifyPhone() {
   const [isVerified, setIsVerified] = useState<null | boolean>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const whatsappGroupLink = 'https://chat.whatsapp.com/ChrXjnNn3Xh1gTikrYyjAs';
+  const whatsappGroupLink = 'https://chat.whatsapp.com/KNK4NlZkxaL2w5YF8v2qka';
 
   const validatePhoneNumber = (code: string, number: string) => {
-    const phonePattern = /^\d{1,4}$/; // Código do país deve ter de 1 a 4 dígitos
-    const numberPattern = /^\d{7,12}$/; // Número deve ter entre 7 e 12 dígitos
+    const phonePattern = /^\d{1,4}$/; 
+    const numberPattern = /^\d{7,12}$/;
     return phonePattern.test(code) && numberPattern.test(number);
   };
 
@@ -45,7 +45,7 @@ export default function VerifyPhone() {
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </Head>
 
-      <div className="p-8 w-full max-w-lg bg-white text-[#B22D00] rounded-lg shadow-2xl border-2 border-[#B22D00]">
+      <div className="p-8 w-full mx-4 lg:mx-0 max-w-lg bg-white text-[#B22D00] rounded-lg shadow-2xl">
         <h2 className="text-center text-3xl font-bold mb-4">Verifique seu número</h2>
         <p className="text-center text-lg text-gray-500 mb-6">
           Verifique seu número para entrar na comunidade FullDev!
@@ -86,7 +86,7 @@ export default function VerifyPhone() {
             type="submit"
             className="w-full bg-[#B22D00] text-white font-semibold py-3 mt-4 rounded-lg hover:bg-[#8f1c00] transition duration-200 text-xl"
           >
-            Entrar
+            Entrar na comunidade
           </button>
         </form>
 
