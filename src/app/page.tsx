@@ -12,7 +12,7 @@ export default function VerifyPhone() {
   const whatsappGroupLink = 'https://chat.whatsapp.com/KNK4NlZkxaL2w5YF8v2qka';
 
   const validatePhoneNumber = (code: string, number: string) => {
-    const phonePattern = /^\d{1,4}$/; 
+    const phonePattern = /^\d{1,4}$/;
     const numberPattern = /^\d{7,12}$/;
     return phonePattern.test(code) && numberPattern.test(number);
   };
